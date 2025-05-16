@@ -1,0 +1,32 @@
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: F:/college/vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot alu_tb_behav xil_defaultlib.alu_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 3 for port 'sel' [F:/college/Junior/spring 2025/digital/Vivdao Directory/Digital_Project/Digital_Project.srcs/sources_1/new/Alu.v:16]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "F:/college/Junior/spring 2025/digital/Vivdao Directory/Digital_Project/Digital_Project.srcs/sources_1/new/Alu.v" Line 1. Module Alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "F:/college/Junior/spring 2025/digital/Vivdao Directory/Digital_Project/Digital_Project.srcs/sources_1/new/Alu.v" Line 1. Module Alu doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Half_adder
+Compiling module xil_defaultlib.full_adder
+Compiling module xil_defaultlib.multiply_4bit
+Compiling module xil_defaultlib.adder_nbit_default
+Compiling module xil_defaultlib.subtractor_nbit_default
+Compiling module xil_defaultlib.arithmetic_unit
+Compiling module xil_defaultlib.xor_4bits
+Compiling module xil_defaultlib.xnor_4bits
+Compiling module xil_defaultlib.Nand_4bits
+Compiling module xil_defaultlib.nor_4bits
+Compiling module xil_defaultlib.ones_complement
+Compiling module xil_defaultlib.And_Gate_4bit_default
+Compiling module xil_defaultlib.OR_Gate_Nbits_default
+Compiling module xil_defaultlib.Logic_Unit
+Compiling module xil_defaultlib.Alu
+Compiling module xil_defaultlib.alu_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot alu_tb_behav
