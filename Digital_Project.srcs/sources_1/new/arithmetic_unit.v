@@ -14,9 +14,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module arithmetic_unit(
-    input clk,
+ input clk,
     input signed [3:0] a, b,
-    input [2:0] sel,  // selector
+    input [2:0] sel,
     output reg signed [7:0] a_out
 );
     reg signed [3:0] a_reg, b_reg;
@@ -78,17 +78,17 @@ wire [4:0] sub_result_5bit_fixed = {sub_sign_bit, sub_result};
         b_reg <= b;
     end
 
-    // Perform arithmetic operations based on sel[2:0]
+    // Perform arithmetic operations based on sel[3:0]
     always @(posedge clk) begin
         case(sel)
-            4'b0000: a_out = {{4{sum_a[3]}}, sum_a};          // Increment a by 1
-            4'b0001: a_out = {{4{sum_b[3]}}, sum_b};          // Increment b by 1
-            4'b0010: a_out = {{4{a_reg[3]}}, a_reg};          // Transfer'a'
-            4'b0011: a_out = {{4{b_reg[3]}}, b_reg};          // Sign-extend 'b'
-            4'b0100: a_out = {{4{dec_sum[3]}}, dec_sum};      // Decrement 'a' by 1
-            4'b0101: a_out = mult_result;                      // Multiply 'a' and 'b'
-            4'b0110:a_out= {{3{add_result_5bit[4]}}, add_result_5bit};       // 5-bit addition zero-extended to 8-bit
-            4'b0111:a_out= {{3{sub_result_5bit_fixed[4]}}, sub_result_5bit_fixed};       // 5-bit subtraction zero-extended to 8-bit
+            4'b0000: a_out = {{4{sum_a[3]}}, sum_a};          // increment a by 1
+            4'b0001: a_out = {{4{sum_b[3]}}, sum_b};          // increment b by 1
+            4'b0010: a_out = {{4{a_reg[3]}}, a_reg};          // transfer a
+            4'b0011: a_out = {{4{b_reg[3]}}, b_reg};          // sign-extend b
+            4'b0100: a_out = {{4{dec_sum[3]}}, dec_sum};      // decrement a by 1
+            4'b0101: a_out = mult_result;                      // multiply a and b
+            4'b0110:a_out= {{3{add_result_5bit[4]}}, add_result_5bit};       // 5 bit addition zero extended to 8 bit
+            4'b0111:a_out= {{3{sub_result_5bit_fixed[4]}}, sub_result_5bit_fixed};       // 5 bit subtraction zero extended to 8 bit
             default: a_out = 8'bxxxxxxxx;
         endcase
     end
